@@ -14,5 +14,9 @@
     "email"
   ],
   "author": "Mike McNeil",
-  "license": "tbd"
+  "license": "MIT",
+  "devDependencies": {
+    "node-machine": "~0.0.1",
+    "mocha": "~1.19.0"
+  }
 }
