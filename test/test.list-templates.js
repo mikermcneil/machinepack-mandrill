@@ -1,11 +1,6 @@
-
-var Machine = require('node-machine');
-var def = require('../listTemplates');
-
-var machine = new Machine(def);
-
-
-machine.configure({
+require('node-machine')
+.require('../list-templates')
+.configure({
   apiKey: '1dTOGDXjJDU5cZiMNd9jRQ'
 })
 .exec({
