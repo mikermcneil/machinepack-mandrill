@@ -1,11 +1,9 @@
-var Machine = require('node-machine');
-
-
 module.exports = {
   moduleName: 'machinepkg-mandrill',
   dependencies: {
     request: '*',
-    async: '*'
+    async: '*',
+    'node-machine': '*'
   },
 
   id: 'delete-all-templates',
@@ -13,7 +11,8 @@ module.exports = {
 
   inputs: {
     apiKey: {
-      example: 'tmTEP_GZlGtqFwkRvy1bpw'
+      example: 'tmTEP_GZlGtqFwkRvy1bpw',
+      required: true
     }
   },
 
@@ -29,6 +28,8 @@ module.exports = {
   },
 
   fn: function(inputs, exits, deps) {
+
+    var Machine = deps['node-machine'];
 
     Machine.require('../list-templates')
     .configure({

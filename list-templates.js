@@ -8,7 +8,8 @@ module.exports = {
 
   inputs: {
     apiKey: {
-      example: '1dTOFDXzJdU5cXiMNd6jRq'
+      example: '1dTOFDXzJdU5cXiMNd6jRq',
+      required: true
     }
   },
 

@@ -1,11 +1,9 @@
-var Machine = require('node-machine');
-
-
 module.exports = {
   moduleName: 'machinepkg-mandrill',
   dependencies: {
     request: '*',
-    async: '*'
+    async: '*',
+    'node-machine': '*'
   },
 
   id: 'migrate-templates',
@@ -13,10 +11,12 @@ module.exports = {
 
   inputs: {
     srcApiKey: {
-      example: '1dTOGDXjJDU5cZiMNd9jRQ'
+      example: '1dTOGDXjJDU5cZiMNd9jRQ',
+      required: true
     },
     destApiKey: {
-      example: 'tmTEP_GZlGtqFwkRvy1bpw'
+      example: 'tmTEP_GZlGtqFwkRvy1bpw',
+      required: true
     }
   },
 
@@ -33,6 +33,7 @@ module.exports = {
 
   fn: function(inputs, exits, deps) {
 
+    var Machine = deps['node-machine'];
     Machine.require('../list-templates')
     .configure({
       apiKey: inputs.srcApiKey
@@ -40,8 +41,6 @@ module.exports = {
     .exec({
       error: exits.error,
       success: function (templates) {
-        console.log('Got templates from source.');
-        // console.log(templates);
 
         deps.async.each(templates, function (template, next) {
 

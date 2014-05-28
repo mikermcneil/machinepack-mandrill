@@ -2,7 +2,6 @@
   "name": "machinepkg-mandrill",
   "version": "0.0.0",
   "description": "Machines for talking to the Mandrill API.",
-  "main": "index.js",
   "scripts": {
     "test": "mocha -b"
   },

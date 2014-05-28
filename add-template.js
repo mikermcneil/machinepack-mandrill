@@ -3,7 +3,8 @@ module.exports = {
   description: 'Add a new email template to a Mandrill account.',
   inputs: {
     apiKey: {
-      example: '1dTOFDXzJdU5cXiMNd6jRq'
+      example: '1dTOFDXzJdU5cXiMNd6jRq',
+      required: true
     },
     name: {
       example: 'reset-your-password',
