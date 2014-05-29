@@ -1,5 +1,6 @@
 module.exports = {
   id: 'list-templates',
+  transparent: true,
   moduleName: 'machinepack-mandrill',
   description: 'Get all mandrill templates.',
   dependencies: {
