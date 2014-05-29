@@ -1,6 +1,6 @@
 module.exports = {
   id: 'delete-template',
-  moduleName: 'machinepkg-mandrill',
+  moduleName: 'machinepack-mandrill',
   description: 'Delete a mandrill template.',
   dependencies: {
     request: '*'
@@ -53,7 +53,7 @@ module.exports = {
         status: 'error',
         code: 5,
         name: 'Unknown_Template',
-        message: 'No such template "machinepkg-mandrill-test"'
+        message: 'No such template "machinepack-mandrill-test"'
       }
     }
   },

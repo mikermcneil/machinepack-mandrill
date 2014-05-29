@@ -1,5 +1,5 @@
 {
-  "name": "machinepkg-mandrill",
+  "name": "machinepack-mandrill",
   "version": "0.0.0",
   "description": "Machines for talking to the Mandrill API.",
   "scripts": {
@@ -21,5 +21,16 @@
     "request": "~2.36.0",
     "async": "~0.9.0",
     "node-machine": "~0.0.1"
+  },
+  "machine-package": {
+    "focus": "mandrill",
+    "machine-api": "~0.0.0",
+    "machines": [
+      "add-template",
+      "list-templates",
+      "delete-template",
+      "delete-all-templates",
+      "migrate-templates"
+    ]
   }
 }

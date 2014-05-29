@@ -36,13 +36,13 @@ module.exports = {
   exits: {
     success: {
       example: {
-        name: 'machinepkg-mandrill-test',
+        name: 'machinepack-mandrill-test',
         code: '<div>Click <a href="*|RESET_LINK|*">here</a> to reset your password.</div>',
         publish_code: null,
         created_at: '2014-05-28 21:59:49.70010',
         updated_at: '2014-05-28 21:59:49.70012',
-        slug: 'machinepkg-mandrill-test',
-        publish_name: 'machinepkg-mandrill-test',
+        slug: 'machinepack-mandrill-test',
+        publish_name: 'machinepack-mandrill-test',
         labels: [],
         text: 'Click on the following link to reset your password: \n *|RESET_LINK|*',
         publish_text: null,
@@ -58,12 +58,12 @@ module.exports = {
         status: 'error',
         code: 6,
         name: 'Invalid_Template',
-        message: 'A template with name "machinepkg-mandrill-test" already exists'
+        message: 'A template with name "machinepack-mandrill-test" already exists'
       }
     }
   },
 
-  moduleName: 'machinepkg-mandrill',
+  moduleName: 'machinepack-mandrill',
   dependencies: {
     request: '~x.x.x'
   },

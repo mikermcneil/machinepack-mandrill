@@ -1,5 +1,5 @@
 
-#machinepkg-mandrill
+#machinepack-mandrill
 
 ###Basic usage
 
@@ -8,7 +8,7 @@
 var API_KEY = '1dTGOXT_JZlGoqRw3Qvy1bpz';
 
 require('node-machine')
-.machine('machinepkg-mandrill/list-templates')
+.machine('machinepack-mandrill/list-templates')
 .inputs({
   apiKey: API_KEY
 })
@@ -35,7 +35,7 @@ Instead of specifying exit handlers, you can also pass a traditional node callba
 var API_KEY = '1dTGOXT_JZlGoqRw3Qvy1bpz';
 
 require('node-machine')
-.machine('machinepkg-mandrill/list-templates')
+.machine('machinepack-mandrill/list-templates')
 .inputs({
   apiKey: API_KEY
 })

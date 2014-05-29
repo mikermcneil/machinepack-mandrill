@@ -1,5 +1,5 @@
 module.exports = {
-  moduleName: 'machinepkg-mandrill',
+  moduleName: 'machinepack-mandrill',
   dependencies: {
     request: '*',
     async: '*',
