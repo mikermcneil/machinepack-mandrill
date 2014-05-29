@@ -1,8 +1,8 @@
 require('node-machine')
 .require('../migrate-templates')
 .configure({
-  // srcApiKey: '1dTOGDXjJDU5cZiMNd9jRQ',
-  // destApiKey: 'tmTEP_GZlGtqFwkRvy1bpw'
+  srcApiKey: '1dTGOXT_JZlGoqRw3Qvy1bpz',
+  destApiKey: 'tzTDP_JZlGoqFw3Rvy1bpw'
 })
 .exec({
   success: function (result) {

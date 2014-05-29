@@ -1,7 +1,7 @@
 require('node-machine')
 .require('../add-template')
 .configure({
-  apiKey: 'tmTEP_GZlGtqFwkRvy1bpw',
+  apiKey: 'tzTDP_JZlGoqFw3Rvy1bpw',
   name: 'machinepkg-mandrill-test',
   code: '<div>Click <a href="*|RESET_LINK|*">here</a> to reset your password.</div>',
   text: 'Click on the following link to reset your password: \n *|RESET_LINK|*'

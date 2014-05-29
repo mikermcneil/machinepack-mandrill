@@ -1,7 +1,7 @@
 require('node-machine')
 .require('../list-templates')
 .configure({
-  apiKey: '1dTOGDXjJDU5cZiMNd9jRQ'
+  apiKey: '1dTGOXT_JZlGoqRw3Qvy1bpz'
 })
 .exec({
   success: function (templates) {

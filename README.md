@@ -5,7 +5,7 @@
 
 ```js
 
-var API_KEY = 'foobar';
+var API_KEY = '1dTGOXT_JZlGoqRw3Qvy1bpz';
 
 require('node-machine')
 .machine('machinepkg-mandrill/list-templates')
@@ -32,7 +32,7 @@ Instead of specifying exit handlers, you can also pass a traditional node callba
 
 ```js
 
-var API_KEY = 'foobar';
+var API_KEY = '1dTGOXT_JZlGoqRw3Qvy1bpz';
 
 require('node-machine')
 .machine('machinepkg-mandrill/list-templates')

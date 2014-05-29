@@ -11,7 +11,7 @@ module.exports = {
 
   inputs: {
     apiKey: {
-      example: 'tmTEP_GZlGtqFwkRvy1bpw',
+      example: 'tzTDP_JZlGoqFw3Rvy1bpw',
       required: true
     }
   },

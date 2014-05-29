@@ -11,11 +11,11 @@ module.exports = {
 
   inputs: {
     srcApiKey: {
-      example: '1dTOGDXjJDU5cZiMNd9jRQ',
+      example: '1dTGOXT_JZlGoqRw3Qvy1bpz',
       required: true
     },
     destApiKey: {
-      example: 'tmTEP_GZlGtqFwkRvy1bpw',
+      example: 'tzTDP_JZlGoqFw3Rvy1bpw',
       required: true
     }
   },

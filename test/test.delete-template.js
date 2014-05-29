@@ -1,7 +1,7 @@
 require('node-machine')
 .require('../delete-template')
 .configure({
-  apiKey: 'tmTEP_GZlGtqFwkRvy1bpw',
+  apiKey: 'tzTDP_JZlGoqFw3Rvy1bpw',
   name: 'machinepkg-mandrill-test'
 })
 .exec({

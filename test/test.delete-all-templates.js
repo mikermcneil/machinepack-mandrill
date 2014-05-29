@@ -1,7 +1,7 @@
 require('node-machine')
 .require('../delete-all-templates')
 .configure({
-  apiKey: 'tmTEP_GZlGtqFwkRvy1bpw'
+  apiKey: 'tzTDP_JZlGoqFw3Rvy1bpw'
 })
 .exec({
   success: function (deletedTemplate) {
