@@ -34,7 +34,7 @@ module.exports = {
   fn: function(inputs, exits, deps) {
 
     var Machine = deps['node-machine'];
-    Machine.require('../list-templates')
+    Machine.require('./list-templates')
     .configure({
       apiKey: inputs.srcApiKey
     })
@@ -48,7 +48,7 @@ module.exports = {
           template.apiKey = inputs.destApiKey;
 
           Machine
-          .require('../add-template')
+          .require('./add-template')
           .configure(template)
           .exec({
             error: next,

@@ -31,7 +31,7 @@ module.exports = {
 
     var Machine = deps['node-machine'];
 
-    Machine.require('../list-templates')
+    Machine.require('./list-templates')
     .configure({
       apiKey: inputs.apiKey
     })
@@ -42,7 +42,7 @@ module.exports = {
 
         deps.async.each(templates, function (template, next) {
           Machine
-          .require('../delete-template')
+          .require('./delete-template')
           .configure({
             apiKey: inputs.apiKey,
             name: template.name
