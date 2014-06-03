@@ -4,13 +4,10 @@
 ###Basic usage
 
 ```js
-
-var API_KEY = '1dTGOXT_JZlGoqRw3Qvy1bpz';
-
 require('node-machine')
-.machine('machinepack-mandrill/list-templates')
-.inputs({
-  apiKey: API_KEY
+.load('machinepack-mandrill/list-templates')
+.configure({
+  apiKey: '1dTGOXT_JZlGoqRw3Qvy1bpz'
 })
 .exec(function (err, templates) {
   success: function (result) {
@@ -20,7 +17,7 @@ require('node-machine')
     console.error('Oops- I encountered an error executing the machine:',err);
   },
   invalidApiKey: function (err) {
-    console.error('That api key (%s) is invalid- please try again.\nDetails:\n',API_KEY,err);
+    console.error('That api key (%s) is invalid- please try again.\nDetails:\n',err);
   }
 });
 ```
@@ -31,18 +28,15 @@ require('node-machine')
 Instead of specifying exit handlers, you can also pass a traditional node callback as the argument to `.exec()` and negotiate the different exit states yourself:
 
 ```js
-
-var API_KEY = '1dTGOXT_JZlGoqRw3Qvy1bpz';
-
 require('node-machine')
-.machine('machinepack-mandrill/list-templates')
-.inputs({
-  apiKey: API_KEY
+.load('machinepack-mandrill/list-templates')
+.configure({
+  apiKey: '1dTGOXT_JZlGoqRw3Qvy1bpz'
 })
 .exec(function (err, templates) {
   if (err) {
     if (err && err.code===5) {
-      console.error('That api key (%s) is invalid- please try again.\nDetails:\n',API_KEY,err);
+      console.error('That api key (%s) is invalid- please try again.\nDetails:\n',err);
     }
     else {
       console.error('Oops- I encountered an error executing the machine:',err);
