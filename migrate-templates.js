@@ -1,13 +1,16 @@
-module.exports = {
-  moduleName: 'machinepack-mandrill',
-  dependencies: {
-    request: '*',
-    async: '*',
-    'node-machine': '*'
-  },
+/**
+ * Module dependencies
+ */
 
+var async = require('async');
+var Machine = require('node-machine');
+
+
+
+module.exports = {
   id: 'migrate-templates',
   description: 'Get all mandrill templates from one account and add them to another.',
+  moduleName: 'machinepack-mandrill',
 
   inputs: {
     srcApiKey: {
@@ -31,10 +34,9 @@ module.exports = {
     }
   },
 
-  fn: function(inputs, exits, deps) {
+  fn: function(inputs, exits) {
 
-    var Machine = deps['node-machine'];
-    Machine.require('./list-templates')
+    Machine.build(require('./list-templates'))
     .configure({
       apiKey: inputs.srcApiKey
     })
@@ -42,13 +44,13 @@ module.exports = {
       error: exits.error,
       success: function (templates) {
 
-        deps.async.each(templates, function (template, next) {
+        async.each(templates, function (template, next) {
 
           // Add api key
           template.apiKey = inputs.destApiKey;
 
           Machine
-          .require('./add-template')
+          .build(require('./add-template'))
           .configure(template)
           .exec({
             error: next,
