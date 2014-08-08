@@ -9,7 +9,7 @@ require('node-machine')
 .configure({
   apiKey: '1dTGOXT_JZlGoqRw3Qvy1bpz'
 })
-.exec(function (err, templates) {
+.exec({
   success: function (result) {
     console.log('Machine executed successfully.', result);
   },
