@@ -1,11 +1,14 @@
 module.exports = {
-  id: 'list-templates',
-  transparent: true,
-  moduleName: 'machinepack-mandrill',
-  description: 'Get all mandrill templates.',
-  dependencies: {
-    request: '*'
-  },
+
+  identity: 'list-templates',
+
+  friendlyName: 'List templates',
+
+  description: 'List all templates available to a user',
+
+  extendedDescription: 'This machine returns _all_ templates- there is no pagination.',
+
+  cacheable: true,
 
   inputs: {
     apiKey: {

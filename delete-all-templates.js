@@ -1,13 +1,12 @@
 module.exports = {
-  moduleName: 'machinepack-mandrill',
-  dependencies: {
-    request: '*',
-    async: '*',
-    'node-machine': '*'
-  },
 
-  id: 'delete-all-templates',
+  identity: 'delete-all-templates',
+
+  friendlyName: 'Delete all templates',
+
   description: 'Delete all mandrill templates from an account.',
+
+  extendedDescription: undefined,
 
   inputs: {
     apiKey: {
@@ -17,7 +16,9 @@ module.exports = {
   },
 
   exits: {
-    success: {},
+    success: {
+
+    },
     error: {
       example: {
         status: 'error',
