@@ -1,5 +1,5 @@
 require('node-machine')
-.require('../list-templates')
+.require('../machines/list-templates')
 .configure({
   apiKey: '1dTGOXT_JZlGoqRw3Qvy1bpz'
 })

@@ -23,8 +23,7 @@
     "node-machine": "^0.2.1"
   },
   "machinepack": {
-    "focus": "mandrill",
-    "machine-api": "~0.0.0",
+    "machineDir": "machines",
     "machines": [
       "add-template",
       "list-templates",

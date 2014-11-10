@@ -1,5 +1,5 @@
 require('node-machine')
-.require('../delete-all-templates')
+.require('../machines/delete-all-templates')
 .configure({
   apiKey: 'tzTDP_JZlGoqFw3Rvy1bpw'
 })

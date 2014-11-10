@@ -1,5 +1,5 @@
 require('node-machine')
-.require('../delete-template')
+.require('../machines/delete-template')
 .configure({
   apiKey: 'tzTDP_JZlGoqFw3Rvy1bpw',
   name: 'machinepack-mandrill-test'

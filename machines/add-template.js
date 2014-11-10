@@ -1,6 +1,10 @@
 module.exports = {
-  id: 'add-template',
+
+  identity: 'add-template',
+  friendlyName: 'Add template',
   description: 'Add a new email template to a Mandrill account.',
+  cacheable: false,
+
   inputs: {
     apiKey: {
       example: '1dTOFDXzJdU5cXiMNd6jRq',
@@ -30,9 +34,13 @@ module.exports = {
       example: true
     },
     labels: {
-      example: ['password', 'automated', 'account-related']
+      example: ['password']
     }
   },
+
+  defaultExit: 'success',
+  catchallExit: 'error',
+
   exits: {
     success: {
       example: {
@@ -63,17 +71,14 @@ module.exports = {
     }
   },
 
-  moduleName: 'machinepack-mandrill',
-  dependencies: {
-    request: '~x.x.x'
-  },
+  fn: function(inputs, exits) {
 
-  fn: function(inputs, exits, deps) {
+    var request = require('request');
 
     // Base url for API requests.
     var BASE_URL = 'https://mandrillapp.com/api/1.0';
 
-    deps.request.post({
+    request.post({
       url: BASE_URL + '/templates/add.json',
       form: {
         key: inputs.apiKey,

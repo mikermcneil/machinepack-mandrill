@@ -4,9 +4,8 @@
 ###Basic usage
 
 ```js
-require('node-machine')
-.build(require('machinepack-mandrill/list-templates'))
-.configure({
+var mandrill = require('machinepack-mandrill');
+mandrill.listTemplates({
   apiKey: '1dTGOXT_JZlGoqRw3Qvy1bpz'
 })
 .exec({
@@ -28,9 +27,8 @@ require('node-machine')
 Instead of specifying exit handlers, you can also pass a traditional node callback as the argument to `.exec()` and negotiate the different exit states yourself:
 
 ```js
-require('node-machine')
-.build(require('machinepack-mandrill/list-templates'))
-.configure({
+var mandrill = require('machinepack-mandrill');
+mandrill.listTemplates({
   apiKey: '1dTGOXT_JZlGoqRw3Qvy1bpz'
 })
 .exec(function (err, templates) {

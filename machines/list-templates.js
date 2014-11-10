@@ -1,13 +1,9 @@
 module.exports = {
 
   identity: 'list-templates',
-
   friendlyName: 'List templates',
-
   description: 'List all templates available to a user',
-
   extendedDescription: 'This machine returns _all_ templates- there is no pagination.',
-
   cacheable: true,
 
   inputs: {
@@ -16,6 +12,9 @@ module.exports = {
       required: true
     }
   },
+
+  defaultExit: 'success',
+  catchallExit: 'error',
 
   exits: {
     success: {
@@ -47,12 +46,14 @@ module.exports = {
     }
   },
 
-  fn: function(inputs, exits, deps) {
+  fn: function(inputs, exits) {
+
+    var request = require('request');
 
     // Base url for API requests.
     var BASE_URL = 'https://mandrillapp.com/api/1.0';
 
-    deps.request.post({
+    request.post({
       url: BASE_URL + '/templates/list.json',
       form: {
         key: inputs.apiKey

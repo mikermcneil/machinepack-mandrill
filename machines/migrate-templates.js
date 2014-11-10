@@ -1,16 +1,9 @@
-/**
- * Module dependencies
- */
-
-var async = require('async');
-var Machine = require('node-machine');
-
-
-
 module.exports = {
-  id: 'migrate-templates',
+
+  identity: 'migrate-templates',
+  friendlyName: 'Migrate templates',
   description: 'Get all mandrill templates from one account and add them to another.',
-  moduleName: 'machinepack-mandrill',
+  cacheable: false,
 
   inputs: {
     srcApiKey: {
@@ -23,8 +16,15 @@ module.exports = {
     }
   },
 
+  defaultExit: 'success',
+  catchallExit: 'error',
+
   exits: {
-    success: {},
+    success: {
+      example: {
+        message: ''
+      }
+    },
     error: {
       example: {
         name: 'Mandrill API Error',
@@ -35,6 +35,9 @@ module.exports = {
   },
 
   fn: function(inputs, exits) {
+
+    var Machine = require('node-machine');
+    var async = require('async');
 
     Machine.build(require('./list-templates'))
     .configure({
@@ -55,7 +58,6 @@ module.exports = {
           .exec({
             error: next,
             success: function (newTemplate) {
-              console.log('Copied template: "%s"', newTemplate.name);
               next();
             }
           });
@@ -64,4 +66,3 @@ module.exports = {
     });
   }
 };
-

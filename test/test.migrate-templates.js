@@ -1,5 +1,5 @@
 require('node-machine')
-.require('../migrate-templates')
+.require('../machines/migrate-templates')
 .configure({
   srcApiKey: '1dTGOXT_JZlGoqRw3Qvy1bpz',
   destApiKey: 'tzTDP_JZlGoqFw3Rvy1bpw'

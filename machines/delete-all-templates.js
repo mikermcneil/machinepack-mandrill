@@ -1,12 +1,9 @@
 module.exports = {
 
   identity: 'delete-all-templates',
-
   friendlyName: 'Delete all templates',
-
   description: 'Delete all mandrill templates from an account.',
-
-  extendedDescription: undefined,
+  cacheable: false,
 
   inputs: {
     apiKey: {
@@ -15,9 +12,14 @@ module.exports = {
     }
   },
 
+  defaultExit: 'success',
+  catchallExit: 'error',
+
   exits: {
     success: {
-
+      example: {
+        message: ''
+      }
     },
     error: {
       example: {
@@ -28,9 +30,10 @@ module.exports = {
     }
   },
 
-  fn: function(inputs, exits, deps) {
+  fn: function(inputs, exits) {
 
-    var Machine = deps['node-machine'];
+    var Machine = require('node-machine');
+    var async = require('async');
 
     Machine.require('./list-templates')
     .configure({
@@ -39,9 +42,7 @@ module.exports = {
     .exec({
       error: exits.error,
       success: function (templates) {
-        console.log('Got list of all %s templates.',templates.length);
-
-        deps.async.each(templates, function (template, next) {
+        async.each(templates, function (template, next) {
           Machine
           .require('./delete-template')
           .configure({
@@ -51,7 +52,6 @@ module.exports = {
           .exec({
             error: next,
             success: function (deletedTemplate) {
-              console.log('Deleted template: "%s"', deletedTemplate.name);
               next();
             }
           });
@@ -60,4 +60,3 @@ module.exports = {
     });
   }
 };
-

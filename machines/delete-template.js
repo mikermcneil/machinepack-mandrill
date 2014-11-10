@@ -1,10 +1,9 @@
 module.exports = {
-  id: 'delete-template',
-  moduleName: 'machinepack-mandrill',
+
+  identity: 'delete-template',
+  friendlyName: 'Delete a template',
   description: 'Delete a mandrill template.',
-  dependencies: {
-    request: '*'
-  },
+  cacheable: false,
 
   inputs: {
     apiKey: {
@@ -16,6 +15,9 @@ module.exports = {
       required: true
     }
   },
+
+  defaultExit: 'success',
+  catchallExit: 'error',
 
   exits: {
     success: {
@@ -58,12 +60,14 @@ module.exports = {
     }
   },
 
-  fn: function(inputs, exits, deps) {
+  fn: function(inputs, exits) {
+
+    var request = require('request');
 
     // Base url for API requests.
     var BASE_URL = 'https://mandrillapp.com/api/1.0';
 
-    deps.request.post({
+    request.post({
       url: BASE_URL + '/templates/delete.json',
       form: {
         key: inputs.apiKey,
