@@ -7,10 +7,12 @@ module.exports = {
 
   inputs: {
     srcApiKey: {
+      description: 'A valid Mandrill API key to copy templates from.',
       example: '1dTGOXT_JZlGoqRw3Qvy1bpz',
       required: true
     },
     destApiKey: {
+      description: 'A valid Mandrill API key to copy templates to.',
       example: 'tzTDP_JZlGoqFw3Rvy1bpw',
       required: true
     }

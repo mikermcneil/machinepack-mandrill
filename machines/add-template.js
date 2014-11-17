@@ -8,32 +8,40 @@ module.exports = {
   inputs: {
     apiKey: {
       example: '1dTOFDXzJdU5cXiMNd6jRq',
+      description: 'A valid Mandrill API key.',
       required: true
     },
     name: {
       example: 'reset-your-password',
+      description: 'Name for the new template (must be unique to the account).',
       required: true
     },
     from_email: {
+      description: 'A default sending address for emails sent using this template.',
       example: 'harold@foo.enterprise'
     },
     from_name: {
+      description: 'A default from name to be used for emails sent using this template.',
       example: 'Harold Greaseworthy'
     },
     subject: {
+      description: 'A default subject line to be used for emails sent using this template.',
       example: 'Click the link in this email to reset your password'
     },
     code: {
-      description: 'HTML body of the message',
+      description: 'The HTML code for the template with mc:edit attributes for the editable elements.',
       example: '<div>Click <a href="*|RESET_LINK|*">here</a> to reset your password.</div>'
     },
     text: {
+      description: 'A default text part to be used when sending with this template.',
       example: 'Click on the following link to reset your password: \n *|RESET_LINK|*'
     },
     publish: {
+      description: 'Set to false to add a draft template without publishing (defaults to true).',
       example: true
     },
     labels: {
+      description: 'An optional array of up to 10 labels to use for filtering templates.',
       example: ['password']
     }
   },

@@ -8,6 +8,7 @@ module.exports = {
 
   inputs: {
     apiKey: {
+      description: 'A valid Mandrill API key.',
       example: '1dTOFDXzJdU5cXiMNd6jRq',
       required: true
     }

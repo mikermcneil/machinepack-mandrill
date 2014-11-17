@@ -7,10 +7,12 @@ module.exports = {
 
   inputs: {
     apiKey: {
+      description: 'A valid Mandrill API key.',
       example: '1dTOFDXzJdU5cXiMNd6jRq',
       required: true
     },
     name: {
+      description: 'The name of an existing template to delete.',
       example: 'example-template',
       required: true
     }
