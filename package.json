@@ -1,6 +1,6 @@
 {
   "name": "machinepack-mandrill",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Machines for talking to the Mandrill API.",
   "scripts": {
     "test": "mocha -b"
