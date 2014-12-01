@@ -25,6 +25,7 @@
   "machinepack": {
     "machineDir": "machines",
     "machines": [
+      "send-plaintext-email",
       "add-template",
       "list-templates",
       "delete-template",
