@@ -33,7 +33,7 @@ module.exports = {
 
   fn: function(inputs, exits) {
 
-    var Machine = require('node-machine');
+    var Machine = require('machine');
     var async = require('async');
 
     Machine.require('./list-templates')
