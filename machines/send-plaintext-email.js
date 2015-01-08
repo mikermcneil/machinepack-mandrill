@@ -53,9 +53,7 @@ module.exports = {
     success: {
       void: true
     },
-    error: {
-      example: undefined
-    }
+    error: {}
   },
 
   fn: function(inputs, exits) {
