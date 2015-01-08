@@ -1,47 +1,25 @@
+![](http://node-machine.org/images/machine-anthropomorph-for-white-bg.png)
 
-#machinepack-mandrill
+# machinepack-mandrill
 
-###Basic usage
+Machines for the Mandrill API.
 
-```js
-var mandrill = require('machinepack-mandrill');
-mandrill.listTemplates({
-  apiKey: '1dTGOXT_JZlGoqRw3Qvy1bpz'
-})
-.exec({
-  success: function (result) {
-    console.log('Machine executed successfully.', result);
-  },
-  error: function (err) {
-    console.error('Oops- I encountered an error executing the machine:',err);
-  },
-  invalidApiKey: function (err) {
-    console.error('That api key (%s) is invalid- please try again.\nDetails:\n',err);
-  }
-});
+### Installation
+
+```sh
+$ npm install machinepack-mandrill
 ```
 
+### Usage
 
-#####Alternatively
+For the latest usage documentation and status of this module, see [http://node-machine.org/machinepack-mandrill](http://node-machine.org/machinepack-mandrill).
 
-Instead of specifying exit handlers, you can also pass a traditional node callback as the argument to `.exec()` and negotiate the different exit states yourself:
+### About
 
-```js
-var mandrill = require('machinepack-mandrill');
-mandrill.listTemplates({
-  apiKey: '1dTGOXT_JZlGoqRw3Qvy1bpz'
-})
-.exec(function (err, templates) {
-  if (err) {
-    if (err && err.code===5) {
-      console.error('That api key (%s) is invalid- please try again.\nDetails:\n',err);
-    }
-    else {
-      console.error('Oops- I encountered an error executing the machine:',err);
-    }
-  }
-  else {
-    console.log('Machine executed successfully.', result);
-  }
-});
-```
+This is a [machinepack](http://node-machine.org/), a module which exposes a set of related machines according to the [machinepack specification](http://node-machine.org/spec/machinepack).
+Documentation pages for the machines contained in this module are automatically generated and kept up-to-date on http://node-machine.org.
+
+### License
+
+MIT &copy; 2015 contributors
+
