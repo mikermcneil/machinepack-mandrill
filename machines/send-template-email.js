@@ -29,9 +29,19 @@ module.exports = {
       description: 'Subject line for the email.',
       example: 'Welcome, Jane!'
     },
+    templateName: {
+      friendlyName: 'Template'
+      description: "The template's name"
+      example: 'myTemplate'
+    },
+    templateContent: {
+      friendlyName: 'Data'
+      description: "The data you want to inject into the template."
+      example: "{'name': 'Jane'}"
+    },
     message: {
       friendlyName: 'Message',
-      description: 'The plaintext body of the email.',
+      description: 'Optional full text content to be sent',
       example: 'Jane,\nThanks for joining our community.  If you have any questions, please don\'t hesitate to send them our way.  Feel free to reply to this email directly.\n\nSincerely,\nThe Management'
     },
     fromEmail: {
@@ -63,11 +73,13 @@ module.exports = {
     var BASE_URL = 'https://mandrillapp.com/api/1.0';
 
     request.post({
-      url: BASE_URL + '/messages/send.json',
+      url: BASE_URL + '/messages/send-template.json',
 
-      // See https://mandrillapp.com/api/docs/messages.JSON.html for complete reference
+      // See https://mandrillapp.com/api/docs/messages.JSON.html#method=send-template for complete reference
       form: {
         key: inputs.apiKey,
+        template_name: inputs.templateName,
+        template_content: inputs.templateContent,
         message: {
           to: [{
             email: inputs.toEmail,
@@ -83,7 +95,6 @@ module.exports = {
       },
       json: true
     }, function(err, response, httpBody) {
-      // console.log('\n\n\n\n',arguments,'\n\n------\n');
       if (err) {
         return exits.error(err);
       } else if (response.status >= 300 || response.status < 200) {

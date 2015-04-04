@@ -83,7 +83,6 @@ module.exports = {
       },
       json: true
     }, function(err, response, httpBody) {
-      // console.log('\n\n\n\n',arguments,'\n\n------\n');
       if (err) {
         return exits.error(err);
       } else if (response.status >= 300 || response.status < 200) {
