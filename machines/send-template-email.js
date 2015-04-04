@@ -30,14 +30,16 @@ module.exports = {
       example: 'Welcome, Jane!'
     },
     templateName: {
-      friendlyName: 'Template'
-      description: "The template's name"
-      example: 'myTemplate'
+      friendlyName: 'Template',
+      description: "The template's name",
+      example: 'myTemplate',
+      required: true
     },
     templateContent: {
-      friendlyName: 'Data'
-      description: "The data you want to inject into the template."
-      example: "{'name': 'Jane'}"
+      friendlyName: 'Data',
+      description: "The data object you want to inject into the template.",
+      example: "{'name': 'Jane'}",
+      typeclass: "dictionary"
     },
     message: {
       friendlyName: 'Message',
@@ -79,7 +81,7 @@ module.exports = {
       form: {
         key: inputs.apiKey,
         template_name: inputs.templateName,
-        template_content: inputs.templateContent,
+        template_content: JSON.stringify(inputs.templateContent),
         message: {
           to: [{
             email: inputs.toEmail,
