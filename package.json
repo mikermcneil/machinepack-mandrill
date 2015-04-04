@@ -26,6 +26,7 @@
     "machineDir": "machines",
     "machines": [
       "send-plaintext-email",
+      "send-template-email",
       "add-template",
       "list-templates",
       "delete-template",
