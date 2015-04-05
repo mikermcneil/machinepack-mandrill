@@ -37,9 +37,8 @@ module.exports = {
     },
     templateContent: {
       friendlyName: 'Data',
-      description: "The data object you want to inject into the template.",
-      example: "{'name': 'Jane'}",
-      typeclass: "dictionary"
+      description: "An array of data you want to inject into the template.",
+      example: "[{'name': 'of attribute', 'content': 'of attribute'}, {'name': 'of other attribute', 'content': 'of other attribute'}]"
     },
     message: {
       friendlyName: 'Message',
@@ -81,7 +80,7 @@ module.exports = {
       form: {
         key: inputs.apiKey,
         template_name: inputs.templateName,
-        template_content: JSON.stringify(inputs.templateContent),
+        template_content: inputs.templateContent,
         message: {
           to: [{
             email: inputs.toEmail,
@@ -97,6 +96,7 @@ module.exports = {
       },
       json: true
     }, function(err, response, httpBody) {
+
       if (err) {
         return exits.error(err);
       } else if (response.status >= 300 || response.status < 200) {
