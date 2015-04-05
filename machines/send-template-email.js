@@ -1,7 +1,7 @@
 module.exports = {
 
-  friendlyName: 'Send email (plaintext)',
-  description: 'Send a plaintext email to the specified recipient.',
+  friendlyName: 'Send email (template)',
+  description: 'Send a templated email to the specified recipient.',
   cacheable: false,
 
   inputs: {
