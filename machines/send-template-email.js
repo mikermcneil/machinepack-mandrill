@@ -87,7 +87,6 @@ module.exports = {
             name: inputs.toName || inputs.toEmail
           }],
           text: inputs.message || '',
-          html: '',
           subject: inputs.subject,
           from_email: inputs.fromEmail,
           from_name: inputs.fromName,
