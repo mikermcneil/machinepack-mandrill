@@ -38,7 +38,7 @@ module.exports = {
     templateContent: {
       friendlyName: 'Data',
       description: "An array of data you want to inject into the template.",
-      example: "[{'name': 'of attribute', 'content': 'of attribute'}, {'name': 'of other attribute', 'content': 'of other attribute'}]"
+      example: [{'name': 'of attribute', 'content': 'of attribute'}]
     },
     message: {
       friendlyName: 'Message',
@@ -96,7 +96,6 @@ module.exports = {
       },
       json: true
     }, function(err, response, httpBody) {
-
       if (err) {
         return exits.error(err);
       } else if (response.status >= 300 || response.status < 200) {
