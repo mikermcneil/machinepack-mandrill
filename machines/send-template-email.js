@@ -54,6 +54,13 @@ module.exports = {
       friendlyName: 'From (name)',
       description: 'Full name of the sender.',
       example: 'Harold Greaseworthy'
+    },
+    mergeVars: {
+      friendlyName: "Merge Tags",
+      description: "Content to be placed within template merge tags.",
+      typeclass: "array",
+      example: [{'name': 'FNAME', 'content': 'First Name'}, {'name': 'LNAME', 'content': 'Last Name'}],
+      addedManually: true
     }
   },
 
@@ -90,6 +97,10 @@ module.exports = {
           subject: inputs.subject,
           from_email: inputs.fromEmail,
           from_name: inputs.fromName,
+          merge_vars: [{
+            rcpt: inputs.toEmail,
+            vars: inputs.mergeVars
+          }],
           auto_html: true
         }
       },
