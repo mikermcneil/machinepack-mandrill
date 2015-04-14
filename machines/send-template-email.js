@@ -58,8 +58,7 @@ module.exports = {
     mergeVars: {
       friendlyName: "Merge Tags",
       description: "Content to be placed within template merge tags.",
-      typeclass: "array",
-      example: [{'name': 'FNAME', 'content': 'First Name'}, {'name': 'LNAME', 'content': 'Last Name'}],
+      example: [{'name': 'FNAME', 'content': 'First Name'}],
       addedManually: true
     }
   },
