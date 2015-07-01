@@ -12,10 +12,10 @@ module.exports = {
       extendedDescription: 'To look up your API key, log in to your Mandrill account and visit the settings page (https://mandrillapp.com/settings/).',
       required: true
     },
-    toEmail: {
+    toEmails: {
       friendlyName: 'To (email)',
-      example: 'jane@example.com',
-      description: 'Email address of the primary recipient.',
+      example: ['jane@example.com'],
+      description: 'Email addresses of the primary recipients.',
       required: true
     },
     toName: {
