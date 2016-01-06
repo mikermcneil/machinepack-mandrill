@@ -106,7 +106,7 @@ module.exports = {
     }, function(err, response, httpBody) {
       if (err) {
         return exits.error(err);
-      } else if (response.status >= 300 || response.status < 200) {
+      } else if (response.statusCode >= 300 || response.statusCode < 200) {
         return exits.error(httpBody);
       } else if (typeof httpBody !== 'object' || httpBody.status === 'error') {
         return exits.error(httpBody);
