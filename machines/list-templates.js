@@ -39,11 +39,7 @@ module.exports = {
       }]
     },
     error: {
-      example: {
-        name: 'Mandrill API Error',
-        message: 'Oops it didnt work',
-        code: 'E_MANDRILL_API'
-      }
+      example: '==='
     }
   },
 
@@ -64,7 +60,7 @@ module.exports = {
       if (err) {
         return exits(err);
       }
-      else if (response.status >= 300||response.status<200) {
+      else if (response.statusCode >= 300||response.statusCode <200) {
         return exits.error(httpBody);
       }
       else if (typeof httpBody !== 'object' || httpBody.status==='error') {
