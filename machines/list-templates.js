@@ -23,19 +23,19 @@ module.exports = {
         slug: 'machinepack-mandrill-test',
         name: 'machinepack-mandrill-test',
         code: '<div>Click <a href="*|RESET_LINK|*">here</a> to reset your password.</div>',
-        publish_code: null,
+        publish_code: '',
         created_at: '2014-05-28 21:59:49.7001',
         updated_at: '2014-05-28 21:59:49.70012',
         publish_name: 'machinepack-mandrill-test',
         labels: [],
         text: 'Click on the following link to reset your password: \n *|RESET_LINK|*',
-        publish_text: null,
-        subject: null,
-        publish_subject: null,
-        from_email: null,
-        publish_from_email: null,
-        from_name: null,
-        publish_from_name: null
+        publish_text: '',
+        subject: '',
+        publish_subject: '',
+        from_email: '',
+        publish_from_email: '',
+        from_name: '',
+        publish_from_name: ''
       }]
     },
     error: {
